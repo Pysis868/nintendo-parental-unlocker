@@ -19,35 +19,35 @@ public class WiiUnlockerTest {
 	@Test(expected = NullPointerException.class)
 	public void getPin_nullConfirmNumber_ThrowsNullPointerException() throws UnlockerException {
 		MonthDay monthDay = MonthDay.of(2, 24);
-		Unlocker unlocker = UnlockerFactory.createUnlocker(NintendoWii, null, monthDay);
+		UnlockerFactory.createUnlocker(NintendoWii, null, monthDay);
 	}
 
 	@Test(expected = UnlockerException.class)
 	public void getPin_emptyConfirmNumber_ThrowsUnlockerException() throws UnlockerException {
 		MonthDay monthDay = MonthDay.of(2, 24);
-		Unlocker unlocker = UnlockerFactory.createUnlocker(NintendoWii, "", monthDay);
+		UnlockerFactory.createUnlocker(NintendoWii, "", monthDay);
 	}
 
 	@Test(expected = UnlockerException.class)
 	public void getPin_shortConfirmNumber_ThrowsUnlockerException() throws UnlockerException {
 		MonthDay monthDay = MonthDay.of(2, 24);
-		Unlocker unlocker = UnlockerFactory.createUnlocker(NintendoWii, "1234567", monthDay);
+		UnlockerFactory.createUnlocker(NintendoWii, "1234567", monthDay);
 	}
 
 	@Test(expected = UnlockerException.class)
 	public void getPin_LongConfirmNumber_ThrowsUnlockerException() throws UnlockerException {
 		MonthDay monthDay = MonthDay.of(2, 24);
-		Unlocker unlocker = UnlockerFactory.createUnlocker(NintendoWii, "123456789", monthDay);
+		UnlockerFactory.createUnlocker(NintendoWii, "123456789", monthDay);
 	}
 
 	@Test(expected = UnlockerException.class)
 	public void getPin_invalidFormatConfirmNumber_ThrowsUnlockerException() throws UnlockerException {
 		MonthDay monthDay = MonthDay.of(2, 24);
-		Unlocker unlocker = UnlockerFactory.createUnlocker(NintendoWii, "1A2B3C4D", monthDay);
+		UnlockerFactory.createUnlocker(NintendoWii, "1A2B3C4D", monthDay);
 	}
 
 	@Test(expected = NullPointerException.class)
 	public void getPin_nullMothDay_ThrowsNullPointerException() throws UnlockerException {
-		Unlocker unlocker = UnlockerFactory.createUnlocker(NintendoWii, "12345678", null);
+		UnlockerFactory.createUnlocker(NintendoWii, "12345678", null);
 	}
 }

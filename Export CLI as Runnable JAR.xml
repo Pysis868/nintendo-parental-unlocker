@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project nintendo-parental-unlocker">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <!--define folder properties-->
+    <property name="dir.buildfile" value="."/>
+    <property name="dir.workspace" value="/Users/Pysis/eclipse-workspace"/>
+    <property name="dir.jarfile" value="${dir.buildfile}"/>
+    <target name="create_run_jar">
+        <jar destfile="${dir.jarfile}/npu.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="me.nand.npu.cli.MainCLI"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="${dir.jarfile}/target/classes"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/Pysis/.m2/repository/junit/junit/4.12/junit-4.12.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/Pysis/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/Pysis/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/Pysis/.m2/repository/org/projectlombok/lombok/1.16.14/lombok-1.16.14.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/Pysis/.m2/repository/org/apache/logging/log4j/log4j-core/2.11.1/log4j-core-2.11.1.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/Pysis/.m2/repository/org/apache/logging/log4j/log4j-api/2.11.1/log4j-api-2.11.1.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/Pysis/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.7.4/jackson-core-2.7.4.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/Pysis/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.7.4/jackson-databind-2.7.4.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/Users/Pysis/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.7.4/jackson-annotations-2.7.4.jar"/>
+        </jar>
+    </target>
+</project>
